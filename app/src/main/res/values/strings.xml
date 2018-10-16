@@ -1,3 +1,14 @@
 <resources>
-    <string name="app_name">My Application</string>
+    <string name="app_name">Multi Timer</string>
+    <string name="hint_minute">Enter Minutes</string>
+    <string name="message_minutes">Please enter time in minutes</string>
+    <string name="set_title">Set Title</string>
+    <string name="home_title">MENU</string>
+    <string name="home_desc">Please select an option to continue.</string>
+    <string name="single_timer">SINGLE TIMER</string>
+    <string name="multi_timer">MULTI TIMERS</string>
+    <string name="alarm">ALARM</string>
+    <string name="stopwatch">STOPWATCH</string>
+
+
 </resources>

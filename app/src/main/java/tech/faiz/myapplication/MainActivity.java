@@ -52,7 +52,8 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                 startActivity(intent);
                 break;
             case R.id.multitimer_button:
-                Toast.makeText(this, "Coming Soon...", Toast.LENGTH_LONG).show();
+                Intent intent2 = new Intent(getApplicationContext(), MultiTimerActivity.class);
+                startActivity(intent2);
                 break;
             case R.id.stopwatch_button:
                 Toast.makeText(this, "Coming Soon...", Toast.LENGTH_LONG).show();

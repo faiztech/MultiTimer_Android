@@ -1,0 +1,481 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MultiTimerActivity"
+    android:orientation="vertical"
+    android:weightSum="10"
+    android:background="@android:color/black">
+
+    <RelativeLayout
+        android:id="@+id/home_header"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1.5">
+        <TextView
+            android:id="@+id/home_title"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:text="@string/multi_timer"
+            android:gravity="center"
+            android:textSize="36sp"
+            android:textStyle="bold"
+            android:textColor="@android:color/white"/>
+    </RelativeLayout>
+
+
+    <GridLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="8"
+        android:columnCount="2"
+        android:rowCount="2"
+        android:padding="10dp"
+        android:alignmentMode="alignMargins">
+
+        <android.support.v7.widget.CardView
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:layout_columnWeight="1"
+            android:layout_rowWeight="1"
+            android:layout_marginBottom="0dp"
+            android:layout_marginStart="2dp"
+            android:layout_marginEnd="2dp"
+            app:cardBackgroundColor="@android:color/white">
+
+            <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+                android:id="@+id/activity_multi_timer1"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:background="@android:color/black">
+
+                <ProgressBar
+                    android:id="@+id/progressBarCircle1"
+                    style="?android:attr/progressBarStyleHorizontal"
+                    android:layout_width="150dp"
+                    android:layout_height="150dp"
+                    android:layout_alignParentTop="true"
+                    android:layout_centerInParent="true"
+                    android:layout_marginTop="32dp"
+                    android:background="@drawable/drawable_circle_bg"
+                    android:indeterminate="false"
+                    android:max="100"
+                    android:progress="100"
+                    android:progressDrawable="@drawable/drawable_circle_yellow"
+                    android:rotation="-90" />
+
+
+                <EditText
+                    android:id="@+id/editTextMinute1"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignTop="@+id/progressBarCircle1"
+                    android:layout_alignParentStart="true"
+                    android:layout_marginStart="40dp"
+                    android:layout_marginEnd="40dp"
+                    android:layout_marginTop="12dp"
+                    android:gravity="bottom|center"
+                    android:hint="@string/hint_minute"
+                    android:inputType="number"
+                    android:maxLength="10"
+                    android:maxLines="1"
+                    android:minEms="5"
+                    android:padding="0dp"
+                    android:text="1"
+                    android:textColor="@color/colorYellow"
+                    android:textColorHint="@color/colorYellow" />
+
+                <TextView
+                    android:id="@+id/textViewTime1"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/editTextMinute1"
+                    android:layout_marginTop="10dp"
+                    android:layout_centerInParent="true"
+                    android:gravity= "center"
+                    android:text="00:01:00"
+                    android:textColor="@color/colorYellow"
+                    android:textSize="28sp"
+                    android:textStyle="bold" />
+
+                <ImageView
+                    android:id="@+id/imageViewReset1"
+                    android:layout_width="32dp"
+                    android:layout_height="32dp"
+                    android:layout_below="@+id/textViewTime1"
+                    android:layout_alignEnd="@+id/textViewTime1"
+                    android:layout_marginTop="8dp"
+                    android:layout_marginEnd="18dp"
+                    android:src="@drawable/icon_reset_yellow"
+                    android:visibility="gone" />
+
+                <ImageView
+                    android:id="@+id/imageViewStartStop1"
+                    android:layout_width="32dp"
+                    android:layout_height="32dp"
+                    android:layout_below="@+id/textViewTime1"
+                    android:layout_alignStart="@+id/textViewTime1"
+                    android:layout_marginStart="18dp"
+                    android:layout_marginTop="8dp"
+                    android:src="@drawable/icon_play_yellow" />
+
+                <EditText
+                    android:id="@+id/titleTextView1"
+                    android:layout_width="match_parent"
+                    android:layout_height="30dp"
+
+                    android:layout_below="@+id/progressBarCircle1"
+                    android:layout_marginTop="5dp"
+                    android:gravity="center"
+                    android:hint="@string/set_title"
+                    android:inputType="text"
+                    android:maxLength="15"
+                    android:maxLines="1"
+                    android:paddingBottom="2dp"
+                    android:textAllCaps="true"
+                    android:textColor="@color/colorYellow"
+                    android:textColorHint="@color/colorYellow"
+                    android:textSize="16sp" />
+
+            </RelativeLayout>
+
+        </android.support.v7.widget.CardView>
+
+        <android.support.v7.widget.CardView
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:layout_columnWeight="1"
+            android:layout_rowWeight="1"
+            android:layout_marginBottom="0dp"
+            android:layout_marginStart="2dp"
+            android:layout_marginEnd="2dp"
+            app:cardBackgroundColor="@android:color/white">
+
+            <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+                android:id="@+id/activity_multi_timer3"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:background="@android:color/black">
+
+                <ProgressBar
+                    android:id="@+id/progressBarCircle3"
+                    style="?android:attr/progressBarStyleHorizontal"
+                    android:layout_width="150dp"
+                    android:layout_height="150dp"
+                    android:layout_alignParentTop="true"
+                    android:layout_centerInParent="true"
+                    android:layout_marginTop="32dp"
+                    android:background="@drawable/drawable_circle_bg"
+                    android:indeterminate="false"
+                    android:max="100"
+                    android:progress="100"
+                    android:progressDrawable="@drawable/drawable_circle_green"
+                    android:rotation="-90" />
+
+
+                <EditText
+                    android:id="@+id/editTextMinute3"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignTop="@+id/progressBarCircle3"
+                    android:layout_alignParentStart="true"
+                    android:layout_marginStart="40dp"
+                    android:layout_marginEnd="40dp"
+                    android:layout_marginTop="12dp"
+                    android:gravity="bottom|center"
+                    android:hint="@string/hint_minute"
+                    android:inputType="number"
+                    android:maxLength="10"
+                    android:maxLines="1"
+                    android:minEms="5"
+                    android:padding="0dp"
+                    android:text="1"
+                    android:textColor="@color/colorGreen"
+                    android:textColorHint="@color/colorGreen" />
+
+                <TextView
+                    android:id="@+id/textViewTime3"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/editTextMinute3"
+                    android:layout_marginTop="10dp"
+                    android:layout_centerInParent="true"
+                    android:gravity= "center"
+                    android:text="00:01:00"
+                    android:textColor="@color/colorGreen"
+                    android:textSize="28sp"
+                    android:textStyle="bold" />
+
+                <ImageView
+                    android:id="@+id/imageViewReset3"
+                    android:layout_width="32dp"
+                    android:layout_height="32dp"
+                    android:layout_below="@+id/textViewTime3"
+                    android:layout_alignEnd="@+id/textViewTime3"
+                    android:layout_marginTop="8dp"
+                    android:layout_marginEnd="18dp"
+                    android:src="@drawable/icon_reset_green"
+                    android:visibility="gone" />
+
+                <ImageView
+                    android:id="@+id/imageViewStartStop3"
+                    android:layout_width="32dp"
+                    android:layout_height="32dp"
+                    android:layout_below="@+id/textViewTime3"
+                    android:layout_alignStart="@+id/textViewTime3"
+                    android:layout_marginStart="18dp"
+                    android:layout_marginTop="8dp"
+                    android:src="@drawable/icon_play_green" />
+
+                <EditText
+                    android:id="@+id/titleTextView3"
+                    android:layout_width="match_parent"
+                    android:layout_height="30dp"
+
+                    android:layout_below="@+id/progressBarCircle3"
+                    android:layout_marginTop="5dp"
+                    android:gravity="center"
+                    android:hint="@string/set_title"
+                    android:inputType="text"
+                    android:maxLength="15"
+                    android:maxLines="1"
+                    android:paddingBottom="2dp"
+                    android:textAllCaps="true"
+                    android:textColor="@color/colorGreen"
+                    android:textColorHint="@color/colorGreen"
+                    android:textSize="16sp" />
+
+            </RelativeLayout>
+
+        </android.support.v7.widget.CardView>
+
+        <android.support.v7.widget.CardView
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:layout_columnWeight="1"
+            android:layout_rowWeight="1"
+            android:layout_marginBottom="0dp"
+            android:layout_marginStart="2dp"
+            android:layout_marginEnd="2dp"
+            app:cardBackgroundColor="@android:color/white">
+
+            <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+                android:id="@+id/activity_multi_timer2"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:background="@android:color/black">
+
+                <ProgressBar
+                    android:id="@+id/progressBarCircle2"
+                    style="?android:attr/progressBarStyleHorizontal"
+                    android:layout_width="150dp"
+                    android:layout_height="150dp"
+                    android:layout_alignParentTop="true"
+                    android:layout_centerInParent="true"
+                    android:layout_marginTop="12dp"
+                    android:background="@drawable/drawable_circle_whitebg"
+                    android:indeterminate="false"
+                    android:max="100"
+                    android:progress="100"
+                    android:progressDrawable="@drawable/drawable_circle_red"
+                    android:rotation="-90" />
+
+
+                <EditText
+                    android:id="@+id/editTextMinute2"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignTop="@+id/progressBarCircle2"
+                    android:layout_alignParentStart="true"
+                    android:layout_marginStart="40dp"
+                    android:layout_marginEnd="40dp"
+                    android:layout_marginTop="12dp"
+                    android:gravity="bottom|center"
+                    android:hint="@string/hint_minute"
+                    android:inputType="number"
+                    android:maxLength="10"
+                    android:maxLines="1"
+                    android:minEms="5"
+                    android:padding="0dp"
+                    android:text="1"
+                    android:textColor="@color/colorRed"
+                    android:textColorHint="@color/colorRed" />
+
+                <TextView
+                    android:id="@+id/textViewTime2"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/editTextMinute2"
+                    android:layout_marginTop="10dp"
+                    android:layout_centerInParent="true"
+                    android:gravity= "center"
+                    android:text="00:01:00"
+                    android:textColor="@color/colorRed"
+                    android:textSize="28sp"
+                    android:textStyle="bold" />
+
+                <ImageView
+                    android:id="@+id/imageViewReset2"
+                    android:layout_width="32dp"
+                    android:layout_height="32dp"
+                    android:layout_below="@+id/textViewTime2"
+                    android:layout_alignEnd="@+id/textViewTime2"
+                    android:layout_marginTop="8dp"
+                    android:layout_marginEnd="18dp"
+                    android:src="@drawable/icon_reset_red"
+                    android:visibility="gone" />
+
+                <ImageView
+                    android:id="@+id/imageViewStartStop2"
+                    android:layout_width="32dp"
+                    android:layout_height="32dp"
+                    android:layout_below="@+id/textViewTime2"
+                    android:layout_alignStart="@+id/textViewTime2"
+                    android:layout_marginStart="18dp"
+                    android:layout_marginTop="8dp"
+                    android:src="@drawable/icon_play_red" />
+
+                <EditText
+                    android:id="@+id/titleTextView2"
+                    android:layout_width="match_parent"
+                    android:layout_height="30dp"
+
+                    android:layout_below="@+id/progressBarCircle2"
+                    android:layout_marginTop="5dp"
+                    android:gravity="center"
+                    android:hint="@string/set_title"
+                    android:inputType="text"
+                    android:maxLength="15"
+                    android:maxLines="1"
+                    android:paddingBottom="2dp"
+                    android:textAllCaps="true"
+                    android:textColor="@color/colorRed"
+                    android:textColorHint="@color/colorRed"
+                    android:textSize="16sp" />
+
+            </RelativeLayout>
+
+        </android.support.v7.widget.CardView>
+
+        <android.support.v7.widget.CardView
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:layout_columnWeight="1"
+            android:layout_rowWeight="1"
+            android:layout_marginBottom="0dp"
+            android:layout_marginStart="2dp"
+            android:layout_marginEnd="2dp"
+            app:cardBackgroundColor="@android:color/white">
+
+            <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+                android:id="@+id/activity_multi_timer4"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:background="@android:color/black">
+
+                <ProgressBar
+                    android:id="@+id/progressBarCircle4"
+                    style="?android:attr/progressBarStyleHorizontal"
+                    android:layout_width="150dp"
+                    android:layout_height="150dp"
+                    android:layout_alignParentTop="true"
+                    android:layout_centerInParent="true"
+                    android:layout_marginTop="12dp"
+                    android:background="@drawable/drawable_circle_bg"
+                    android:indeterminate="false"
+                    android:max="100"
+                    android:progress="100"
+                    android:progressDrawable="@drawable/drawable_circle_blue"
+                    android:rotation="-90" />
+
+
+                <EditText
+                    android:id="@+id/editTextMinute4"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignTop="@+id/progressBarCircle4"
+                    android:layout_alignParentStart="true"
+                    android:layout_marginStart="40dp"
+                    android:layout_marginEnd="40dp"
+                    android:layout_marginTop="12dp"
+                    android:gravity="bottom|center"
+                    android:hint="@string/hint_minute"
+                    android:inputType="number"
+                    android:maxLength="10"
+                    android:maxLines="1"
+                    android:minEms="5"
+                    android:padding="0dp"
+                    android:text="1"
+                    android:textColor="@color/colorBlue"
+                    android:textColorHint="@color/colorBlue" />
+
+                <TextView
+                    android:id="@+id/textViewTime4"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/editTextMinute4"
+                    android:layout_marginTop="10dp"
+                    android:layout_centerInParent="true"
+                    android:gravity= "center"
+                    android:text="00:01:00"
+                    android:textColor="@color/colorBlue"
+                    android:textSize="28sp"
+                    android:textStyle="bold" />
+
+                <ImageView
+                    android:id="@+id/imageViewReset4"
+                    android:layout_width="32dp"
+                    android:layout_height="32dp"
+                    android:layout_below="@+id/textViewTime4"
+                    android:layout_alignEnd="@+id/textViewTime4"
+                    android:layout_marginTop="8dp"
+                    android:layout_marginEnd="18dp"
+                    android:src="@drawable/icon_reset_blue"
+                    android:visibility="gone" />
+
+                <ImageView
+                    android:id="@+id/imageViewStartStop4"
+                    android:layout_width="32dp"
+                    android:layout_height="32dp"
+                    android:layout_below="@+id/textViewTime4"
+                    android:layout_alignStart="@+id/textViewTime4"
+                    android:layout_marginStart="18dp"
+                    android:layout_marginTop="8dp"
+                    android:src="@drawable/icon_play_blue" />
+
+                <EditText
+                    android:id="@+id/titleTextView4"
+                    android:layout_width="match_parent"
+                    android:layout_height="30dp"
+
+                    android:layout_below="@+id/progressBarCircle4"
+                    android:layout_marginTop="5dp"
+                    android:gravity="center"
+                    android:hint="@string/set_title"
+                    android:inputType="text"
+                    android:maxLength="15"
+                    android:maxLines="1"
+                    android:paddingBottom="2dp"
+                    android:textAllCaps="true"
+                    android:textColor="@color/colorBlue"
+                    android:textColorHint="@color/colorBlue"
+                    android:textSize="16sp" />
+
+            </RelativeLayout>
+
+        </android.support.v7.widget.CardView>
+
+
+
+
+
+    </GridLayout>
+
+
+
+
+
+
+</LinearLayout>
