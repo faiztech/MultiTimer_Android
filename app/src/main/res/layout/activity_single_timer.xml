@@ -6,25 +6,59 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    android:weightSum="10"
-    >
+    android:background="@color/colorBackground"
+    android:weightSum="10">
 
+    <RelativeLayout
+        android:id="@+id/home_header"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1.25">
+        <TextView
+            android:id="@+id/home_title"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:text="@string/single_timer"
+            android:gravity="bottom|center"
+            android:textSize="36sp"
+            android:textStyle="bold"
+            android:textColor="@android:color/white"/>
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:id="@+id/home_help"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="0.75">
+
+        <Button
+            android:id="@+id/help_button"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:textStyle="bold"
+            android:textColor="@color/colorBlue"
+            android:layout_alignParentEnd="true"
+            android:layout_alignParentBottom="true"
+            android:layout_marginEnd="7dp"
+            android:layout_marginBottom="0dp"
+            android:text="Help" />
+    </RelativeLayout>
 
 
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:id="@+id/activity_single_timer"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
+    android:layout_height="0dp"
     android:background="@color/colorBackground"
     android:layout_weight="8">
 
     <ProgressBar
         android:id="@+id/progressBarCircle"
         style="?android:attr/progressBarStyleHorizontal"
-        android:layout_width="270dp"
-        android:layout_height="270dp"
+        android:layout_width="300dp"
+        android:layout_height="300dp"
         android:layout_alignParentTop="true"
-        android:layout_marginTop="120dp"
+        android:layout_marginTop="40dp"
         android:layout_centerHorizontal="true"
         android:background="@drawable/drawable_circle_bg"
         android:indeterminate="false"
@@ -37,9 +71,16 @@
     <EditText
         android:id="@+id/editTextMinute"
         android:layout_width="wrap_content"
-        android:layout_height="44dp"
+        android:layout_height="wrap_content"
         android:layout_alignTop="@+id/progressBarCircle"
+        android:backgroundTint="@android:color/white"
+        android:textCursorDrawable="@android:color/white"
         android:layout_centerHorizontal="true"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentEnd="true"
+        android:layout_marginStart="120dp"
+        android:layout_marginEnd="120dp"
+        android:textSize="22sp"
         android:layout_marginTop="50dp"
         android:gravity="center"
         android:hint="@string/hint_minute"
@@ -57,30 +98,31 @@
         android:layout_height="wrap_content"
         android:layout_below="@+id/editTextMinute"
         android:layout_centerHorizontal="true"
-        android:layout_marginTop="8dp"
+        android:layout_marginTop="0dp"
         android:text="00:01:00"
         android:textColor="@color/colorYellow"
-        android:textSize="45sp" />
+        android:textStyle="bold"
+        android:textSize="58sp" />
 
     <ImageView
         android:id="@+id/imageViewReset"
-        android:layout_width="40dp"
-        android:layout_height="40dp"
+        android:layout_width="60dp"
+        android:layout_height="60dp"
         android:layout_below="@+id/textViewTime"
         android:layout_alignEnd="@+id/textViewTime"
-        android:layout_marginTop="30dp"
-        android:layout_marginEnd="43dp"
+        android:layout_marginTop="10dp"
+        android:layout_marginEnd="50dp"
         android:src="@drawable/icon_reset"
         android:visibility="gone"/>
 
     <ImageView
         android:id="@+id/imageViewStartStop"
-        android:layout_width="40dp"
-        android:layout_height="40dp"
+        android:layout_width="60dp"
+        android:layout_height="60dp"
         android:layout_below="@+id/textViewTime"
         android:layout_alignStart="@+id/textViewTime"
-        android:layout_marginStart="43dp"
-        android:layout_marginTop="30dp"
+        android:layout_marginStart="50dp"
+        android:layout_marginTop="10dp"
         android:src="@drawable/icon_start" />
 
     <EditText
@@ -92,12 +134,14 @@
         android:textColor="@color/colorYellow"
         android:hint="@string/set_title"
         android:textColorHint="@color/colorYellow"
-        android:textSize="20sp"
+        android:textSize="32sp"
         android:layout_marginTop="0dp"
         android:gravity="center"
         android:inputType="text"
         android:maxLength="15"
         android:maxLines="1"
+        android:backgroundTint="@android:color/white"
+        android:textCursorDrawable="@android:color/white"
 
         />
 

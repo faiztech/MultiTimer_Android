@@ -1,10 +1,17 @@
 package tech.faiz.myapplication;
 
+import android.app.Activity;
+import android.app.AlertDialog;
+import android.content.Context;
+import android.content.DialogInterface;
+import android.media.MediaPlayer;
 import android.os.Bundle;
 import android.os.CountDownTimer;
-import android.support.v7.app.ActionBar;
 import android.support.v7.app.AppCompatActivity;
+import android.view.MotionEvent;
 import android.view.View;
+import android.view.inputmethod.InputMethodManager;
+import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.ProgressBar;
@@ -18,11 +25,12 @@ public class SingleTimerActivity extends AppCompatActivity implements View.OnCli
     private long timeCountInMilliSeconds = 1 * 60000;
 
 
+
     private enum TimerStatus {
         STARTED,
-        PAUSED,
         STOPPED
     }
+
 
     private TimerStatus mTimerStatus = TimerStatus.STOPPED;
 
@@ -32,7 +40,10 @@ public class SingleTimerActivity extends AppCompatActivity implements View.OnCli
     private ImageView mImageViewReset;
     private ImageView mImageViewStartStop;
     private CountDownTimer mCountDownTimer;
-    private EditText mTitleView;
+
+    public MediaPlayer mMediaPlayer;
+
+    private Button mHelpButton;
 
 
     @Override
@@ -45,7 +56,8 @@ public class SingleTimerActivity extends AppCompatActivity implements View.OnCli
         // method call to initialize the listeners
         initListeners();
 
-
+        mMediaPlayer = new MediaPlayer();
+        mMediaPlayer = MediaPlayer.create(getBaseContext(), R.raw.sound_timer_end);
 
     }
 
@@ -58,13 +70,14 @@ public class SingleTimerActivity extends AppCompatActivity implements View.OnCli
         mTextViewTime = (TextView) findViewById(R.id.textViewTime);
         mImageViewReset = (ImageView) findViewById(R.id.imageViewReset);
         mImageViewStartStop = (ImageView) findViewById(R.id.imageViewStartStop);
-        mTitleView = (EditText) findViewById(R.id.titleTextView);
+        mHelpButton = (Button) findViewById(R.id.help_button);
     }
 
 
     private void initListeners() {
         mImageViewReset.setOnClickListener(this);
         mImageViewStartStop.setOnClickListener(this);
+        mHelpButton.setOnClickListener(this);
     }
 
 
@@ -78,17 +91,36 @@ public class SingleTimerActivity extends AppCompatActivity implements View.OnCli
             case R.id.imageViewStartStop:
                 startStop();
                 break;
+            case R.id.help_button:
+                showHelpDialog();
+                break;
         }
 
     }
 
+    void showHelpDialog() {
+
+        AlertDialog.Builder ImageDialog = new AlertDialog.Builder(this);
+
+        ImageDialog.setTitle("Instructions");
+        ImageView showImage = new ImageView(this);
+        showImage.setImageResource(R.drawable.image_help);
+        ImageDialog.setView(showImage);
+
+        ImageDialog.setNegativeButton("ok", new DialogInterface.OnClickListener()
+        {
+            public void onClick(DialogInterface arg0, int arg1)
+            {
+            }
+        });
+ImageDialog.show();
+    }
 
 
     private void reset() {
         stopCountDownTimer();
         startCountDownTimer();
     }
-
 
     /**
      * method to start and stop count down timer
@@ -148,6 +180,7 @@ public class SingleTimerActivity extends AppCompatActivity implements View.OnCli
      */
     private void startCountDownTimer() {
 
+
         mCountDownTimer = new CountDownTimer(timeCountInMilliSeconds, 1000) {
             @Override
             public void onTick(long millisUntilFinished) {
@@ -155,11 +188,12 @@ public class SingleTimerActivity extends AppCompatActivity implements View.OnCli
                 mTextViewTime.setText(hmsTimeFormatter(millisUntilFinished));
 
                 mProgressBarCircle.setProgress((int) (millisUntilFinished / 1000));
-
             }
 
             @Override
             public void onFinish() {
+
+
 
                 mTextViewTime.setText(hmsTimeFormatter(timeCountInMilliSeconds));
                 // call to initialize the progress bar values
@@ -172,6 +206,11 @@ public class SingleTimerActivity extends AppCompatActivity implements View.OnCli
                 mEditTextMinute.setEnabled(true);
                 // changing the timer status to stopped
                 mTimerStatus = TimerStatus.STOPPED;
+
+                mMediaPlayer.start();
+
+                Toast.makeText(SingleTimerActivity.this, "Times up...", Toast.LENGTH_LONG).show();
+
             }
 
         }.start();
@@ -211,6 +250,32 @@ public class SingleTimerActivity extends AppCompatActivity implements View.OnCli
         return hms;
 
 
+    }
+
+    @Override
+    public boolean dispatchTouchEvent(MotionEvent ev) {
+        View v = getCurrentFocus();
+
+        if (v != null &&
+                (ev.getAction() == MotionEvent.ACTION_UP || ev.getAction() == MotionEvent.ACTION_MOVE) &&
+                v instanceof EditText &&
+                !v.getClass().getName().startsWith("android.webkit.")) {
+            int scrcoords[] = new int[2];
+            v.getLocationOnScreen(scrcoords);
+            float x = ev.getRawX() + v.getLeft() - scrcoords[0];
+            float y = ev.getRawY() + v.getTop() - scrcoords[1];
+
+            if (x < v.getLeft() || x > v.getRight() || y < v.getTop() || y > v.getBottom())
+                hideKeyboard(this);
+        }
+        return super.dispatchTouchEvent(ev);
+    }
+
+    public static void hideKeyboard(Activity activity) {
+        if (activity != null && activity.getWindow() != null && activity.getWindow().getDecorView() != null) {
+            InputMethodManager imm = (InputMethodManager)activity.getSystemService(Context.INPUT_METHOD_SERVICE);
+            imm.hideSoftInputFromWindow(activity.getWindow().getDecorView().getWindowToken(), 0);
+        }
     }
 
 }

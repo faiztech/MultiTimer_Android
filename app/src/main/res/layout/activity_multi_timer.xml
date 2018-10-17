@@ -13,18 +13,36 @@
         android:id="@+id/home_header"
         android:layout_width="match_parent"
         android:layout_height="0dp"
-        android:layout_weight="1.5">
+        android:layout_weight="1.25">
         <TextView
             android:id="@+id/home_title"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:text="@string/multi_timer"
-            android:gravity="center"
+            android:gravity="bottom|center"
             android:textSize="36sp"
             android:textStyle="bold"
             android:textColor="@android:color/white"/>
     </RelativeLayout>
 
+    <RelativeLayout
+        android:id="@+id/home_help"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="0.75">
+
+        <Button
+            android:id="@+id/help_button2"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:textStyle="bold"
+            android:textColor="@color/colorBlue"
+            android:layout_alignParentEnd="true"
+            android:layout_alignParentBottom="true"
+            android:layout_marginEnd="7dp"
+            android:layout_marginBottom="0dp"
+            android:text="Help" />
+    </RelativeLayout>
 
     <GridLayout
         android:layout_width="match_parent"
@@ -58,7 +76,7 @@
                     android:layout_height="150dp"
                     android:layout_alignParentTop="true"
                     android:layout_centerInParent="true"
-                    android:layout_marginTop="32dp"
+                    android:layout_marginTop="20dp"
                     android:background="@drawable/drawable_circle_bg"
                     android:indeterminate="false"
                     android:max="100"
@@ -73,26 +91,30 @@
                     android:layout_height="wrap_content"
                     android:layout_alignTop="@+id/progressBarCircle1"
                     android:layout_alignParentStart="true"
+                    android:layout_alignParentEnd="true"
                     android:layout_marginStart="40dp"
                     android:layout_marginEnd="40dp"
-                    android:layout_marginTop="12dp"
                     android:gravity="bottom|center"
                     android:hint="@string/hint_minute"
                     android:inputType="number"
                     android:maxLength="10"
                     android:maxLines="1"
                     android:minEms="5"
-                    android:padding="0dp"
+                    android:textSize="14sp"
+                    android:layout_marginTop="20dp"
+                    android:paddingBottom="8dp"
                     android:text="1"
                     android:textColor="@color/colorYellow"
-                    android:textColorHint="@color/colorYellow" />
+                    android:textColorHint="@color/colorYellow"
+                    android:backgroundTint="@android:color/white"
+                    android:textCursorDrawable="@android:color/white"/>
 
                 <TextView
                     android:id="@+id/textViewTime1"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_below="@+id/editTextMinute1"
-                    android:layout_marginTop="10dp"
+                    android:layout_marginTop="0dp"
                     android:layout_centerInParent="true"
                     android:gravity= "center"
                     android:text="00:01:00"
@@ -106,7 +128,7 @@
                     android:layout_height="32dp"
                     android:layout_below="@+id/textViewTime1"
                     android:layout_alignEnd="@+id/textViewTime1"
-                    android:layout_marginTop="8dp"
+                    android:layout_marginTop="5dp"
                     android:layout_marginEnd="18dp"
                     android:src="@drawable/icon_reset_yellow"
                     android:visibility="gone" />
@@ -118,14 +140,14 @@
                     android:layout_below="@+id/textViewTime1"
                     android:layout_alignStart="@+id/textViewTime1"
                     android:layout_marginStart="18dp"
-                    android:layout_marginTop="8dp"
+                    android:layout_marginTop="5dp"
                     android:src="@drawable/icon_play_yellow" />
 
                 <EditText
                     android:id="@+id/titleTextView1"
-                    android:layout_width="match_parent"
-                    android:layout_height="30dp"
-
+                    android:layout_width="wrap_content"
+                    android:layout_centerHorizontal="true"
+                    android:layout_height="wrap_content"
                     android:layout_below="@+id/progressBarCircle1"
                     android:layout_marginTop="5dp"
                     android:gravity="center"
@@ -133,11 +155,12 @@
                     android:inputType="text"
                     android:maxLength="15"
                     android:maxLines="1"
-                    android:paddingBottom="2dp"
                     android:textAllCaps="true"
                     android:textColor="@color/colorYellow"
                     android:textColorHint="@color/colorYellow"
-                    android:textSize="16sp" />
+                    android:textSize="18sp"
+                    android:backgroundTint="@android:color/white"
+                    android:textCursorDrawable="@android:color/white"/>
 
             </RelativeLayout>
 
@@ -166,7 +189,7 @@
                     android:layout_height="150dp"
                     android:layout_alignParentTop="true"
                     android:layout_centerInParent="true"
-                    android:layout_marginTop="32dp"
+                    android:layout_marginTop="20dp"
                     android:background="@drawable/drawable_circle_bg"
                     android:indeterminate="false"
                     android:max="100"
@@ -181,26 +204,30 @@
                     android:layout_height="wrap_content"
                     android:layout_alignTop="@+id/progressBarCircle3"
                     android:layout_alignParentStart="true"
+                    android:layout_alignParentEnd="true"
                     android:layout_marginStart="40dp"
                     android:layout_marginEnd="40dp"
-                    android:layout_marginTop="12dp"
                     android:gravity="bottom|center"
                     android:hint="@string/hint_minute"
                     android:inputType="number"
                     android:maxLength="10"
                     android:maxLines="1"
                     android:minEms="5"
-                    android:padding="0dp"
+                    android:textSize="14sp"
+                    android:layout_marginTop="20dp"
+                    android:paddingBottom="8dp"
                     android:text="1"
                     android:textColor="@color/colorGreen"
-                    android:textColorHint="@color/colorGreen" />
+                    android:textColorHint="@color/colorGreen"
+                    android:backgroundTint="@android:color/white"
+                    android:textCursorDrawable="@android:color/white"/>
 
                 <TextView
                     android:id="@+id/textViewTime3"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_below="@+id/editTextMinute3"
-                    android:layout_marginTop="10dp"
+                    android:layout_marginTop="0dp"
                     android:layout_centerInParent="true"
                     android:gravity= "center"
                     android:text="00:01:00"
@@ -214,7 +241,7 @@
                     android:layout_height="32dp"
                     android:layout_below="@+id/textViewTime3"
                     android:layout_alignEnd="@+id/textViewTime3"
-                    android:layout_marginTop="8dp"
+                    android:layout_marginTop="5dp"
                     android:layout_marginEnd="18dp"
                     android:src="@drawable/icon_reset_green"
                     android:visibility="gone" />
@@ -226,14 +253,14 @@
                     android:layout_below="@+id/textViewTime3"
                     android:layout_alignStart="@+id/textViewTime3"
                     android:layout_marginStart="18dp"
-                    android:layout_marginTop="8dp"
+                    android:layout_marginTop="5dp"
                     android:src="@drawable/icon_play_green" />
 
                 <EditText
                     android:id="@+id/titleTextView3"
-                    android:layout_width="match_parent"
-                    android:layout_height="30dp"
-
+                    android:layout_width="wrap_content"
+                    android:layout_centerHorizontal="true"
+                    android:layout_height="wrap_content"
                     android:layout_below="@+id/progressBarCircle3"
                     android:layout_marginTop="5dp"
                     android:gravity="center"
@@ -241,11 +268,12 @@
                     android:inputType="text"
                     android:maxLength="15"
                     android:maxLines="1"
-                    android:paddingBottom="2dp"
                     android:textAllCaps="true"
                     android:textColor="@color/colorGreen"
                     android:textColorHint="@color/colorGreen"
-                    android:textSize="16sp" />
+                    android:textSize="18sp"
+                    android:backgroundTint="@android:color/white"
+                    android:textCursorDrawable="@android:color/white"/>
 
             </RelativeLayout>
 
@@ -289,26 +317,30 @@
                     android:layout_height="wrap_content"
                     android:layout_alignTop="@+id/progressBarCircle2"
                     android:layout_alignParentStart="true"
+                    android:layout_alignParentEnd="true"
                     android:layout_marginStart="40dp"
                     android:layout_marginEnd="40dp"
-                    android:layout_marginTop="12dp"
                     android:gravity="bottom|center"
                     android:hint="@string/hint_minute"
                     android:inputType="number"
                     android:maxLength="10"
                     android:maxLines="1"
                     android:minEms="5"
-                    android:padding="0dp"
+                    android:textSize="14sp"
+                    android:layout_marginTop="20dp"
+                    android:paddingBottom="8dp"
                     android:text="1"
                     android:textColor="@color/colorRed"
-                    android:textColorHint="@color/colorRed" />
+                    android:textColorHint="@color/colorRed"
+                    android:backgroundTint="@android:color/white"
+                    android:textCursorDrawable="@android:color/white"/>
 
                 <TextView
                     android:id="@+id/textViewTime2"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_below="@+id/editTextMinute2"
-                    android:layout_marginTop="10dp"
+                    android:layout_marginTop="0dp"
                     android:layout_centerInParent="true"
                     android:gravity= "center"
                     android:text="00:01:00"
@@ -322,7 +354,7 @@
                     android:layout_height="32dp"
                     android:layout_below="@+id/textViewTime2"
                     android:layout_alignEnd="@+id/textViewTime2"
-                    android:layout_marginTop="8dp"
+                    android:layout_marginTop="5dp"
                     android:layout_marginEnd="18dp"
                     android:src="@drawable/icon_reset_red"
                     android:visibility="gone" />
@@ -334,14 +366,14 @@
                     android:layout_below="@+id/textViewTime2"
                     android:layout_alignStart="@+id/textViewTime2"
                     android:layout_marginStart="18dp"
-                    android:layout_marginTop="8dp"
+                    android:layout_marginTop="5dp"
                     android:src="@drawable/icon_play_red" />
 
                 <EditText
                     android:id="@+id/titleTextView2"
-                    android:layout_width="match_parent"
-                    android:layout_height="30dp"
-
+                    android:layout_width="wrap_content"
+                    android:layout_centerHorizontal="true"
+                    android:layout_height="wrap_content"
                     android:layout_below="@+id/progressBarCircle2"
                     android:layout_marginTop="5dp"
                     android:gravity="center"
@@ -349,11 +381,12 @@
                     android:inputType="text"
                     android:maxLength="15"
                     android:maxLines="1"
-                    android:paddingBottom="2dp"
                     android:textAllCaps="true"
                     android:textColor="@color/colorRed"
                     android:textColorHint="@color/colorRed"
-                    android:textSize="16sp" />
+                    android:textSize="18sp"
+                    android:backgroundTint="@android:color/white"
+                    android:textCursorDrawable="@android:color/white"/>
 
             </RelativeLayout>
 
@@ -397,26 +430,30 @@
                     android:layout_height="wrap_content"
                     android:layout_alignTop="@+id/progressBarCircle4"
                     android:layout_alignParentStart="true"
+                    android:layout_alignParentEnd="true"
                     android:layout_marginStart="40dp"
                     android:layout_marginEnd="40dp"
-                    android:layout_marginTop="12dp"
                     android:gravity="bottom|center"
                     android:hint="@string/hint_minute"
                     android:inputType="number"
                     android:maxLength="10"
                     android:maxLines="1"
                     android:minEms="5"
-                    android:padding="0dp"
+                    android:textSize="14sp"
+                    android:layout_marginTop="20dp"
+                    android:paddingBottom="8dp"
                     android:text="1"
                     android:textColor="@color/colorBlue"
-                    android:textColorHint="@color/colorBlue" />
+                    android:textColorHint="@color/colorBlue"
+                    android:backgroundTint="@android:color/white"
+                    android:textCursorDrawable="@android:color/white"/>
 
                 <TextView
                     android:id="@+id/textViewTime4"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_below="@+id/editTextMinute4"
-                    android:layout_marginTop="10dp"
+                    android:layout_marginTop="0dp"
                     android:layout_centerInParent="true"
                     android:gravity= "center"
                     android:text="00:01:00"
@@ -430,7 +467,7 @@
                     android:layout_height="32dp"
                     android:layout_below="@+id/textViewTime4"
                     android:layout_alignEnd="@+id/textViewTime4"
-                    android:layout_marginTop="8dp"
+                    android:layout_marginTop="5dp"
                     android:layout_marginEnd="18dp"
                     android:src="@drawable/icon_reset_blue"
                     android:visibility="gone" />
@@ -442,14 +479,16 @@
                     android:layout_below="@+id/textViewTime4"
                     android:layout_alignStart="@+id/textViewTime4"
                     android:layout_marginStart="18dp"
-                    android:layout_marginTop="8dp"
+                    android:layout_marginTop="5dp"
                     android:src="@drawable/icon_play_blue" />
 
                 <EditText
                     android:id="@+id/titleTextView4"
-                    android:layout_width="match_parent"
-                    android:layout_height="30dp"
-
+                    android:layout_width="wrap_content"
+                    android:layout_centerHorizontal="true"
+                    android:layout_height="wrap_content"
+                    android:backgroundTint="@android:color/white"
+                    android:textCursorDrawable="@android:color/white"
                     android:layout_below="@+id/progressBarCircle4"
                     android:layout_marginTop="5dp"
                     android:gravity="center"
@@ -457,11 +496,10 @@
                     android:inputType="text"
                     android:maxLength="15"
                     android:maxLines="1"
-                    android:paddingBottom="2dp"
                     android:textAllCaps="true"
                     android:textColor="@color/colorBlue"
                     android:textColorHint="@color/colorBlue"
-                    android:textSize="16sp" />
+                    android:textSize="18sp" />
 
             </RelativeLayout>
 
